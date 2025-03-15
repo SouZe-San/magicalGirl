@@ -19,13 +19,22 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  background: url(/bg.jpeg);
-  background-size: cover;
-  background-position: center;
+  position: relative;
   min-height: 100vh;
-  mask-image: linear-gradient(#fff0, #f000);
 }
 
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(./assets/bg.jpeg);
+  background-size: cover;
+  background-position: center;
+  mask-image: var(--mask-image, linear-gradient(#fff0, #f000));
+  mask-size: var(--mask-size, cover);
+  mask-position: var(--mask-position, center);
+  z-index: -1;
+}
 header {
   position: absolute;
   top: 30%;

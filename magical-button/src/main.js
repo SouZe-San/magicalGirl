@@ -1,19 +1,21 @@
 import "./style.css";
 const btn = document.getElementById("clickBtn");
 const image = document.getElementById("maho-img");
-
+import msk from "./assets/mask.gif";
 let isClick = false;
 btn.addEventListener("click", () => {
   isClick = !isClick;
   if (isClick) {
-    document.body.style.maskImage = "url('mask.gif')";
-    document.body.style.maskSize = "cover";
-    document.body.style.maskPosition = "center";
+    document.body.style.setProperty("--mask-image", `url(${msk})`);
+    document.body.style.setProperty("--mask-size", "cover");
+    document.body.style.setProperty("--mask-position", "center");
+
     image.style.visibility = "hidden";
     return;
+  } else {
+    image.style.visibility = "visible";
+    document.body.style.setProperty("--mask-image", "linear-gradient(#fff0, #f000)");
   }
-  image.style.visibility = "visible";
-  document.body.style.maskImage = "linear-gradient(#fff0,#f000)";
 });
 
 document.addEventListener("DOMContentLoaded", () => {
