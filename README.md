@@ -30,6 +30,3 @@ To get this project up and running locally:
    bun install
    bun dev
    ```
-3. Visit this
-
-   [https://sailor-mrinal-button.netlify.app/]
