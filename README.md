@@ -19,7 +19,7 @@ To get this project up and running locally:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/souze-san/magicalgirl-mrinal.git
+   git clone https://github.com/souze-san/magicalgirl.git
    ```
 
 2. Cast a spell:
