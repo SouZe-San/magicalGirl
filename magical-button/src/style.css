@@ -27,7 +27,7 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url(./assets/bg.jpeg);
+  background: url(./assets/bg.webp);
   background-size: cover;
   background-position: center;
   mask-image: var(--mask-image, linear-gradient(#fff0, #f000));
@@ -53,6 +53,9 @@ header {
 h1 {
   font-size: 3em;
   line-height: 1.1;
+  span {
+    font-size: 2rem;
+  }
 }
 
 #app {
@@ -65,8 +68,11 @@ h1 {
   position: relative;
 }
 
-button {
+.buttonClass {
   margin: 0 4rem;
+}
+
+button {
   border-radius: 10px;
   border: 0.1px solid rgba(71, 71, 71, 0.1);
   padding: 0 1.2em;
@@ -86,12 +92,70 @@ button {
   position: relative;
 }
 
+.click-button-container {
+  position: relative;
+  display: inline-block;
+  transition: all 0.25s ease-in-out, color 0.4s ease-in-out;
+  &::after,
+  &::before {
+    content: "";
+    transition: all 0.3s ease-in-out;
+  }
+}
+
 button#clickBtn {
-  /* background: linear-gradient(40deg, #fe8356, #ff005b); */
   box-shadow: none;
   background: linear-gradient(40deg, #00e1fd, #fc007a);
+  /* 0px 3px 0px #826d6d, 0px -2px 23px #f0ffb969; */
   color: #ffffff;
   border: none;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-color: #7d7d7d00;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.click-button-container:hover {
+  &::before {
+    box-shadow: 13px -10px 38px 10px #c7ff00, 5px 12px 16px 6px #00ff4c94;
+  }
+
+  &::after {
+    box-shadow: -15px -10px 29px 13px #6800ff96, -5px 12px 16px 6px #00f3ff94;
+  }
+  button#clickBtn {
+    background: rgba(237, 237, 237, 0.151);
+    color: #0e0d0d;
+    backdrop-filter: blur(3rem);
+    background: linear-gradient(to left, #68f6e24d, #72a9cadb, #dfff004d);
+    box-shadow: inset 0pt 4pt 3pt -2pt #e9e9e947, 0pt 4pt 5pt -3pt #093c2987;
+    border-bottom: 2pt solid #c2c3c74f;
+
+    .color {
+      box-shadow: -58px -3px 29px 27px rgba(232, 232, 232, 0.01),
+        -21px 5px 13.9px 17px rgba(195, 255, 221, 0.57);
+    }
+
+    &::after {
+      top: 0;
+      right: 0;
+      /* box-shadow: -58px -3px 29px 27px rgba(229, 143, 67, 0.57),
+        -21px 5px 13.9px 17px rgba(233, 12, 145, 0.57); */
+      box-shadow: -58px -3px 29px 27px rgba(28, 255, 212, 0.57),
+        -21px 5px 13.9px 17px rgba(195, 12, 233, 0.75);
+    }
+    &::before {
+      /* box-shadow: 21px 6px 28px 25px rgba(196, 241, 72, 0.39),
+        6px -6px 25px 11px rgba(69, 255, 2, 0.78); */
+
+      box-shadow: 21px 6px 28px 25px rgba(196, 241, 72, 0.23), 6px -6px 25px 11px rgb(255, 239, 2);
+    }
+  }
 }
 
 button.hover:hover {

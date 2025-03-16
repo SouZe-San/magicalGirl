@@ -22,15 +22,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const magicButton = document.getElementById("magicButton");
   const sparklesContainer = document.getElementById("sparklesContainer");
   const sparkleColors = [
-    "#A855F7",
-    "#3B82F6",
+    "#9422ff",
+    "#2175fc",
     "#EC4899",
-    "#FBBF24",
+    "#faba16",
     "#34D399",
-    "#F43F5E",
+    "#fc3254",
     "#8B5CF6",
-    "#22D3EE",
-    "#6366F1",
+    "#25d9f5",
+    "#5255f7",
   ];
 
   magicButton.addEventListener("mouseenter", () => {
